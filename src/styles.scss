@@ -1,0 +1,88 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+// Only Pagination CSS
+.item {
+  align-items: center;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+  margin: 1px;
+}
+
+.disabled-page {
+  color: black;
+}
+
+.active {
+  border: solid 1px black;
+  border-radius: 40px;
+  background-color: black;
+  color: white;
+}
+
+.item:hover {
+  border: solid 1px black;
+  border-radius: 40px;
+}
+
+.next {
+  font-size: 4px;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  width: 60px;
+}
+
+.next:hover,
+.previous:hover {
+  border: none !important;
+}
+
+.pagination {
+  align-items: center;
+  background-color: transparent;
+  height: 60px;
+  justify-content: center;
+  position: absolute;
+  right: 4rem;
+  display: flex;
+  width: 370px;
+}
+
+.pagination-page {
+  font-weight: 700;
+}
+
+.previous {
+  font-size: 4px;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  width: 60px;
+}
+
+@media (max-width: 768px) {
+  .item {
+    font-size: 10px;
+    height: 30px;
+    width: 30px;
+  }
+
+  .next,
+  .previous {
+    font-size: 3px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .pagination {
+    right: 15px;
+    width: 285px;
+  }
+}
