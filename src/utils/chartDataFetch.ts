@@ -1,5 +1,6 @@
 import { CheckedItems } from "../types/type.d";
 
+// Returns Data for ChartJS
 export function getChartData(data: any[], props?: CheckedItems) {
   let filteredData = data;
   let filterByChar: any = [];
@@ -37,6 +38,7 @@ export function getChartData(data: any[], props?: CheckedItems) {
   ];
 }
 
+// Return array of filters
 export function getChartFilter(data: any) {
   const namesSet = new Set();
 

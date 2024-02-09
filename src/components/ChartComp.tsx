@@ -5,6 +5,7 @@ import { CategoryScale, defaults } from "chart.js";
 import { getChartData, getChartFilter } from "../utils/chartDataFetch";
 import { CheckedItems, ChartData } from "../types/type.d";
 
+// Chart Register and Chart Responsive
 Chart.register(CategoryScale);
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -24,6 +25,7 @@ const ChartComp: React.FC<ChartCompProps> = ({ data }) => {
     const { name, checked } = event.target;
     if (name === "all" && checked === false) return;
     if (name === "all") {
+      // all others false if all is true
       if (checked) {
         const newCheckedItems: CheckedItems = { all: true };
         Object.keys(checkedItems).forEach((key) => {
@@ -36,11 +38,13 @@ const ChartComp: React.FC<ChartCompProps> = ({ data }) => {
         setCheckedItems({ ...checkedItems, all: false });
       }
     } else {
+      // all is false and others are from user input
       let newCheckedItems: CheckedItems = {
         ...checkedItems,
         [name]: checked,
         all: false,
       };
+      // all to true if all others false
       newCheckedItems = Object.assign(
         {},
         newCheckedItems,
@@ -69,7 +73,7 @@ const ChartComp: React.FC<ChartCompProps> = ({ data }) => {
       <div className="flex flex-wrap justify-center my-4">
         <span className="text-[#1B1B1B] mx-2">Filter : </span>
         <input
-          className="peer  placeholder-gray-400 text-sm text-primary rounded border-none ring-2 ring-gray-300 focus:ring-primary focus:ring-2"
+          className="peer  placeholder-gray-400 text-sm text-primary rounded border-none ring-2 ring-gray-300 focus:ring-primary focus:ring-2 mt-1"
           type="checkbox"
           name="all"
           defaultChecked={true}

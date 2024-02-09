@@ -1,3 +1,4 @@
+// only 100 character fetched at 1 time and api not working for fetching through name So looping and fetching all and stored in data.json
 const axios = require("axios");
 const fs = require("fs/promises");
 const md5 = require("md5");
